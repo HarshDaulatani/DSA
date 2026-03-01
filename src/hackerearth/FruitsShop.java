@@ -1,28 +1,31 @@
+package hackerearth;
+
 import java.util.Scanner;
 
-public class Main {
+public class FruitsShop{
 
-    public static int fruit_shop(int a, int b, int p,
-                            int m, int ca, int cb, int cp) {
+    public static int fruitShop(int a, int b, int p,
+                                int m, int ca, int cb, int cp) {
 
         int count = 0;
 
-        for (int i = 0;i<3;i++){
-            if(a <=b && a<= p){
-                int buy = Math.min(ca,m/a);
+        for (int i = 0; i < 3; i++) {
+
+            if (a <= b && a <= p) {
+                int buy = Math.min(ca, m / a);
                 count += buy;
-                m -= buy *a;
+                m -= buy * a;
                 ca = 0;
                 a = Integer.MAX_VALUE;
             }
-            else if(b<=p){
-                int buy = Math.min(cb,m/b);
+            else if (b <= a && b <= p) {
+                int buy = Math.min(cb, m / b);
                 count += buy;
-                m -= buy*b;
+                m -= buy * b;
                 cb = 0;
                 b = Integer.MAX_VALUE;
             }
-            else{
+            else {
                 int buy = Math.min(cp, m / p);
                 count += buy;
                 m -= buy * p;
@@ -30,8 +33,8 @@ public class Main {
                 p = Integer.MAX_VALUE;
             }
         }
-        return count;
 
+        return count;
     }
 
     public static void main(String[] args) {
@@ -48,6 +51,6 @@ public class Main {
 
         int m = sc.nextInt();
 
-        System.out.println(fruit_shop(a, b, p, m, ca, cb, cp));
+        System.out.println(fruitShop(a, b, p, m, ca, cb, cp));
     }
 }
