@@ -5,22 +5,23 @@ class Solution {
         }
         int left = 0;
         int right = s.length()-1;
-        while(left<= right){
-            char currFirst = s.charAt(left);
+        while(left <= right){
+            char currStart = s.charAt(left);
             char currLast = s.charAt(right);
-            if (!Character.isLetterOrDigit(currFirst)) {
-        		left++;
-        	} else if(!Character.isLetterOrDigit(currLast)) {
-        		right--;
+            if(!Character.isLetterOrDigit(currStart)){
+                left++;
+            }
+            else if(!Character.isLetterOrDigit(currLast)){
+                right--;
             }
             else{
-                if(Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)){
+                if(Character.toLowerCase(currStart) != Character.toLowerCase(currLast)){
                     return false;
                 }
-                
-            left++;
-            right--;
-        }}
+                left++;
+                right--;
+            }
+        }
         return true;
     }
 }
