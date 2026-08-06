@@ -9,7 +9,11 @@ class Solution {
             if(c == 'n') n++;
         }
 
-        return Math.min(Math.min(b,a), Math.min(Math.min(l/2,o/2),n));
+        return Math.min(
+            Math.min(b,a), 
+            Math.min(
+                Math.min(l/2,o/2),n)
+                );
         
     }
 }
