@@ -13,14 +13,17 @@ class Solution {
         if(head == null){
             return null;
         }
+        if(head.next == null){
+            return head;
+        }
         ListNode current = head;
         ListNode prev = null;
         ListNode next = null;
-        while(current != null){
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
+        while(current!= null){
+           next = current.next;
+           current.next = prev;
+           prev = current;
+           current = next;
         }
         return prev;
     }
